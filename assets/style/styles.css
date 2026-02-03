@@ -82,3 +82,19 @@ header h1 {
   background-color: #ff7f50;
   border-radius: 2em;
 }
+
+:modal {
+  border-color: #ff7f50;
+  border-radius: 2em;
+  h2 {
+    color: #ff7f50;
+  }
+  h3 {
+    color: #FFB347;
+  }
+  button {
+    background-color: #ff7f50;
+    border-radius: 2em;
+  }
+}
+
