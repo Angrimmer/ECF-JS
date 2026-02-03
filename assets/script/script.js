@@ -6,7 +6,6 @@ async function getRecipes() {
 
 function renderRecipes(recipes) {
   const container = document.querySelector("#recipesContainer");
-  container.innerHTML = ""; 
 
   recipes.forEach((recipe) => {
     let ingredientsHtml = "";
