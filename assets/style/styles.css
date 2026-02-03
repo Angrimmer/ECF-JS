@@ -77,3 +77,8 @@ header h1 {
 .recipe-card li {
   margin-bottom: 6px;
 }
+
+.recipe-button {
+  background-color: #ff7f50;
+  border-radius: 2em;
+}

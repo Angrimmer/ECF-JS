@@ -1724,6 +1724,45 @@
       "description": "Préparer la frangipane : Mélanger le sucre la poudre d'amander, le beurre et les oeufs. Etaler la moitier de la pate feuilleté et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
       "appliance": "Four",
       "ustensils": ["rouleau à patisserie", "fouet"]
-    }
+    },
+    {
+    "id": 51,
+    "name": "Poulet au curry",
+    "servings": 2,
+    "ingredients": [
+      {
+      "ingredient": "poulet",
+      "quantity": 500,
+      "unit": "grammes"
+      },
+      {
+        "ingredient": "Oignon",
+        "quantity": 1
+      },
+      {
+        "ingredient": "Ail",
+        "quantity": 2
+      },
+      {
+        "ingredient": "lait de coco",
+        "quantity": 200,
+        "unit": "ml"
+      },
+      {
+        "ingredient": "pâte de curry",
+        "quantity": 2,
+        "unit":"cuillère à soupe"
+      },
+      {
+        "ingredient": "d'huile",
+        "quantity": 1,
+        "unit": "cuillère à soupe"
+      }
+    ],
+    "time": 45,
+    "description": "lorem imput patati et patata trois petits tours et puis voilà",
+    "appliance": "Four",
+    "ustensils": "une main, c'est déjà pas mal"
+  }
   ]
 }

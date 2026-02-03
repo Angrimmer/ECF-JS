@@ -11,9 +11,9 @@ function renderRecipes(recipes) {
     let ingredientsHtml = "";
 
     recipe.ingredients.forEach((ing) => {
-      const qty = ing.quantity;
-      const unit = ing.unit;
-      const name = ing.ingredient;
+      const qty = ing.quantity ||"";
+      const unit = ing.unit ||"";
+      const name = ing.ingredient ||"";
 
       ingredientsHtml += `<li>${qty} ${unit} ${name}</li>`;
     });
@@ -25,6 +25,8 @@ function renderRecipes(recipes) {
         <ul>
           ${ingredientsHtml}
         </ul>
+        <button class="recipe-button"
+        <a href="recette.html?id=${recipe.id}">Voir la recette</a> </button>
       </article>
     `;
   });
