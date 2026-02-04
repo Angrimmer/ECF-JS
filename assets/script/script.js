@@ -1,11 +1,14 @@
+//? get recipes
 async function getRecipes() {
   const response = await fetch("assets/data/recette.json");
   const data = await response.json();
   return data.recipes;
 }
 
+//? display cards
 function renderRecipes(recipes) {
   const container = document.querySelector("#recipesContainer");
+  container.innerHTML = "";
 
   recipes.forEach((recipe) => {
     let ingredientsHtml = "";
@@ -37,6 +40,7 @@ getRecipes().then((recipes) => {
   renderRecipes(recipes);
 });
 
+//? fill modal 
 function openModal(recipe) {
   const dialog = document.querySelector("#recipeModal");
 
@@ -63,9 +67,24 @@ function openModal(recipe) {
   dialog.showModal(); 
 }
 
+//? search for searchbar.
+function searchRecipes(recipes, query) {
+  const text = query.toLowerCase();
+
+  return recipes.filter((recipe) => {
+    const name = recipe.name.toLowerCase();
+    const desc = (recipe.description || "").toLowerCase();
+    return name.includes(text) || desc.includes(text);
+  });
+}
+
+//? global init
+let allRecipes = [];
+
 getRecipes().then((recipes) => {
   renderRecipes(recipes);
 
+//? modal button
 document.querySelector("#recipesContainer").addEventListener("click", (e) => {
   if (e.target.classList.contains("openModalBtn")) {
     const id = Number(e.target.dataset.id);
@@ -76,8 +95,24 @@ document.querySelector("#recipesContainer").addEventListener("click", (e) => {
   }
 });
 
+//? close modal
   const dialog = document.querySelector("#recipeModal");
   document.querySelector("#closeModal").addEventListener("click", () => {
     dialog.close();
   });
+});
+
+
+//? searchbar
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value;
+  const filtered = searchRecipes(allRecipes, query);
+  renderRecipes(filtered);
+});
+
+getRecipes().then((recipes) => {
+  allRecipes = recipes;      
+  renderRecipes(recipes);    
 });
