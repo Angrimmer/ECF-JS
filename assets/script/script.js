@@ -73,8 +73,7 @@ function searchRecipes(recipes, query) {
 
   return recipes.filter((recipe) => {
     const name = recipe.name.toLowerCase();
-    const desc = (recipe.description || "").toLowerCase();
-    return name.includes(text) || desc.includes(text);
+    return name.includes(text) 
   });
 }
 
@@ -110,6 +109,7 @@ searchInput.addEventListener("input", () => {
   const query = searchInput.value;
   const filtered = searchRecipes(allRecipes, query);
   renderRecipes(filtered);
+  console.log(filtered)
 });
 
 getRecipes().then((recipes) => {
